@@ -1,0 +1,58 @@
+﻿<body>
+<title>Member Index - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<br/>10 per page:
+<a href="/members/page/10/1"><button>1</button></a>
+<a href="/members/page/10/2"><button>2</button></a>
+<a href="/members/page/10/3"><button>3</button></a>
+
+  <style>
+    table {
+      border-collapse: collapse
+    }
+    tr:nth-child(even) {
+      background-image: linear-gradient(to right, darkred, lightgrey);
+    }
+
+  </style>
+
+<br/>
+<h2>List of members:</h2>
+<table id="list">
+@Each
+<tr>
+  <td title="ID: @Current.MemberID">
+  <a href="/members/@Current.MemberID">
+    <b>@Current.LastName</b>, @Current.FirstMidName
+  </a>
+  </td>
+  <td>
+  <a href="/members/@Current.MemberID/edit">
+    EDIT
+  </a>
+  </td>
+  <td>
+  <a href="/members/@Current.MemberID/confirmDelete">
+    DELETE
+  </a>
+  </td>
+
+  <td>
+  <a title="Wikipedia" target="_blank" href="https://en.wikipedia.org/wiki/@Current.FirstMidName @Current.LastName">
+    <img src="/Content/Wikipedia-W-bold-in-square.svg.png"/>
+  </a>
+  </td>
+
+  <td>
+  <a class="" href="/members/@Current.MemberID/editpersonalloans">
+    EDIT LOANS <span title="number of loans">(@Current.Loans.Count)</span>
+  </a>
+  </td>
+</tr>
+@EndEach
+</table>
+</body>

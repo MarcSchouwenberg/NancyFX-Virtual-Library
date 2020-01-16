@@ -1,0 +1,98 @@
+﻿<body>
+<title>Book Index - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<br/>10 per page:
+<a href="/books/page/10/1"><button>1</button></a>
+<a href="/books/page/10/2"><button>2</button></a>
+<a href="/books/page/10/3"><button>3</button></a>
+<a href="/books/page/10/4"><button>4</button></a>
+<a href="/books/page/10/5"><button>5</button></a>
+<a href="/books/page/10/6"><button>6</button></a>
+<a href="/books/page/10/7"><button>7</button></a>
+<a href="/books/page/10/8"><button>8</button></a>
+<a href="/books/page/10/9"><button>9</button></a>
+<a href="/books/page/10/10"><button>10</button></a>
+<a href="/books/page/10/11"><button>11</button></a>
+<a href="/books/page/10/12"><button>12</button></a>
+<a href="/books/page/10/13"><button>13</button></a>
+<br/>50 per page:
+<a href="/books/page/50/1"><button>1</button></a>
+<a href="/books/page/50/2"><button>2</button></a>
+<a href="/books/page/50/3"><button>3</button></a>
+<br/>100 per page:
+<a href="/books/page/100/1"><button>1</button></a>
+<a href="/books/page/100/2"><button>2</button></a>
+<br/>
+
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    tr:nth-child(even) {
+      background-image: linear-gradient(to right, darkred, lightgrey);
+    }
+  </style>
+  
+<h2>List of books:</h2>
+<form name="inputfield" method="Get" action="/books">
+  <input type="text" name="searchquery" placeholder="search..."/>
+  <input type="submit" value="Filter"/>
+</form>
+
+Sort by:
+<a href="/books?sortorder=id"><button>
+ID</button></a>
+<a href="/books?sortorder=id_desc"><button>
+ID (desc)</button></a>
+<a href="/books?sortorder=title"><button>
+Title</button></a>
+<a href="/books?sortorder=title_desc"><button>
+Title (desc)</button></a>
+<a href="/books?sortorder=author"><button>
+Author</button></a>
+<a href="/books?sortorder=author_desc"><button>
+Author (desc)</button></a>
+<br/>
+
+<table id="list">
+@Each
+<tr>
+  <td title="ID: @Current.BookID">
+  <a href="/books/@Current.BookID">
+    <b>@Current.Title</b>
+  </a>
+    (@Current.Author, @Current.YearPublished)
+  </td>
+  <td>
+  <a href="/books/@Current.BookID/edit">
+    EDIT
+  </a>
+  </td>
+  <td>
+  <a href="/books/@Current.BookID/confirmDelete">
+    DELETE
+  </a>
+  </td>
+  <td>
+    <a title="Wikipedia" target="_blank" href="https://en.wikipedia.org/wiki/@Current.Title">
+      <img src="/Content/Wikipedia-W-bold-in-square.svg.png"/>
+    </a>
+    <a target="_blank" href="https://www.amazon.com/s?k=@Current.Title%20@Current.Author&amp;i=stripbooks">
+      <img src="/Content/1280px-Amazon_logo_plain.svg.png"/>
+    </a>
+    <a target="_blank" href="https://www.bol.com/nl/s/boeken/zoekresultaten/Ntt/@Current.Title @Current.Author">
+      <img src="/Content/Bol.com_logo.svg.png"/>
+    </a>
+    <a title="ISBNSearch.org" target="_blank" href="https://isbnsearch.org/search?s=@Current.Title%20@Current.Author">
+      <i>ISBN</i>
+    </a>
+  </td>
+</tr>
+@EndEach
+</table>
+
+</body>

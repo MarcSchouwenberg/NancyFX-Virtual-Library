@@ -1,0 +1,77 @@
+﻿body {
+    background-image: linear-gradient(to bottom right, #993300, lightgrey);
+    color: lightgrey;
+    font-family: Verdana, Tahoma;
+}
+
+.headerOpt {
+    color: darkred;
+    display: inline-block;
+    background-color: lightyellow;
+    width: 150px;
+    height: 30px;
+}
+
+.indexOpt {
+    background-color: rgb(153, 102, 0);
+    color: lightgrey;
+    width: 200px;
+    height: 100px;
+    outline: none;
+    border-radius: 15%;
+    font-size: 20px;
+    transition-duration: 0.2s;
+}
+
+.indexOpt:hover {
+	background-color: rgb(179, 119, 0);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BookIndex.sshtml */
+#list {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#list, #list a {
+    color: black;
+}
+#list tr:nth-child(odd) {
+    background-image: linear-gradient(to right, grey, lightgrey);
+}
+#list tr:nth-child(even) {
+    background-image: linear-gradient(to right, darkgrey, lightgrey);
+}
+#list tr:hover {
+    background-image: linear-gradient(to right, darkgreen, lightgrey);
+}
+#list tr:nth-child(odd):hover, #list tr:nth-child(odd):hover a{
+    color: grey;
+}
+#list tr:nth-child(even):hover, #list tr:nth-child(even):hover a{
+    color: darkgrey;
+}
+#list td {
+    padding-left:  15px;
+    padding-right: 15px;
+}
+img {
+    height: 20px;
+}
+
+/* NewBookForm.sshtml */
+.label {
+    text-align: right;
+}
+
+.uniForm input, .uniForm tr {
+	height: 40px;
+    width: auto;
+	color: black;
+	font-size: 25px;
+	border-radius: 5px;
+	border: 2px solid black;
+}

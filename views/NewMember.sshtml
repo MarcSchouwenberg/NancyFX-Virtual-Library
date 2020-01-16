@@ -1,0 +1,27 @@
+﻿<body>
+<title>Confirm New Member: @Model.FirstMidName @Model.LastName - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<h2>NEW MEMBER (MODEL=ARRAYLIST):</h2>
+<br/>
+
+data entered:
+<br/>
+@Each
+  @Current<br/>
+@EndEach
+<br/>
+
+<h2>NEW MEMBER (MODEL=MEMBER):</h2>
+  
+<h4>FirstMidName: @Model.FirstMidName</h4>
+<h4>LastName: @Model.LastName</h4>
+<br/><br/>
+  <button>
+      <a href="/addmember/@Model.FirstMidName/@Model.LastName">ADD</a>
+</button>
+
+</body>

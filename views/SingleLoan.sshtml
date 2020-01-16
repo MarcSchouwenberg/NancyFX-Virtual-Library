@@ -1,0 +1,16 @@
+﻿<body>
+<title>Loan #@Model.LoanID - NancyLib</title>
+	<link rel="stylesheet" href="/Content/styles.css"/>
+	<script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<h3 title="LoanID">@Model.LoanID</h3>
+<h4>Member: @Model.Member.FirstMidName @Model.Member.LastName</h4>
+<h4>Book: @Model.Copy.Book.Title</h4>
+<h4>Loandate: @Model.LoanDate</h4>
+
+<a href="/loans/@Model.LoanID/edit">EDIT LOAN</a><br/>
+<a href="~/loans/@Model.LoanID/confirmDelete">DELETE LOAN</a><br/>
+
+</body>

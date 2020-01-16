@@ -1,0 +1,41 @@
+﻿<body>
+  <title>Add New Book - NancyLib</title>
+  <link rel="stylesheet" href="/content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+  <form name="inputfield" method="Post" action="/books"
+        oninput="target.href = '/books/new/confirmnewbook/' + (newTitle.value) + '/' + (newAuthor.value)">
+  <div style="background-color: grey; border-radius: 15px; border: 5px groove green">
+    <table id="newBookForm" class="uniForm">
+      <tr>
+        <td class="label">Title:</td>
+        <td>
+          <input name="newTitle" type="text" placeholder="title"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Author:</td>
+        <td>
+          <input name="newAuthor" type="text" placeholder="author"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">YearPublished:</td>
+        <td>
+          <input name="newYearPublished" type="text" placeholder="year of publication"/>
+        </td>
+      </tr>
+      <tr style="text-align:right; background-color: ;">
+        <td></td>
+        <td style="text-align:center; " ccolspan="20">
+          <input type="submit" value="SUBMIT"/>
+                    </td>
+      </tr>
+    </table>
+  </div>
+
+</form>
+
+</body>

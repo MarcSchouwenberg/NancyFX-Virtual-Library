@@ -1,0 +1,19 @@
+﻿<body>
+<title>@Model.FirstMidName @Model.LastName - NancyLib</title>
+	<link rel="stylesheet" href="/Content/styles.css"/>
+	<script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<h3 title="MemberID">@Model.MemberID</h3>
+<h4>First (and middle) name: @Model.FirstMidName</h4>
+<h4>Last name: @Model.LastName</h4>
+<a target="_blank" href="https://en.wikipedia.org/wiki/@Model.FirstMidName @Model.LastName">
+  <i>Wikipedia</i>
+</a>
+<br/><br/>
+
+<a class="" href="/members/@Model.MemberID/edit">EDIT MEMBER</a><br/>
+<a class="" href="~/members/@Model.MemberID/confirmDelete">DELETE MEMBER</a><br/>
+
+</body>

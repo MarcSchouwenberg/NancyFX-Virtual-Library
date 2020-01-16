@@ -1,0 +1,27 @@
+﻿<body>
+<title>Confirm New Book: @Model.Title - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<h2>NEW BOOK (MODEL=ARRAYLIST):</h2>
+<br/>
+
+data entered:
+<br/>
+@Each
+  @Current<br/>
+@EndEach
+<br/>
+
+<h2>NEW BOOK (MODEL=BOOK):</h2>
+  
+<h4>Title: @Model.Title</h4>
+<h4>Author: @Model.Author</h4>
+<br/><br/>
+  <button>
+      <a href="/addbook/@Model.Title/@Model.Author">ADD</a>
+</button>
+
+</body>

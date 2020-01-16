@@ -1,0 +1,37 @@
+﻿<body>
+<title>@Model.Title - NancyLib</title>
+	<link rel="stylesheet" href="/Content/styles.css"/>
+	<script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<h3 title="BookID">@Model.BookID</h3>
+<h4>Title: @Model.Title</h4>
+<h4>Author: @Model.Author</h4>
+<h4>Year: @Model.YearPublished</h4>
+<h4>Total copies: @Model.Copies.Count</h4>
+
+ID's of the copies:<br/>
+@Each.Copies
+ <li>@Current.CopyID</li>
+@EndEach
+
+<h4>Available copies: @Context.ViewBag.avCopies</h4>
+
+<a target="_blank" href="https://en.wikipedia.org/wiki/@Model.Title">
+  <i>Wikipedia</i>
+</a>
+-
+<a target="_blank" href="https://www.amazon.com/s?k=@Model.Title%20@Model.Author&amp;i=stripbooks">
+  <i>Amazon</i>
+</a>
+-
+<a target="_blank" href="https://www.bol.com/nl/s/boeken/zoekresultaten/Ntt/@Model.Title%20@Model.Author">
+  <i>Bol.com</i>
+</a>
+<br/><br/>
+
+<a class="" href="/books/@Model.BookID/edit">EDIT BOOK</a><br/>
+<a class="" href="~/books/@Model.BookID/confirmDelete">DELETE BOOK</a><br/>
+
+</body>

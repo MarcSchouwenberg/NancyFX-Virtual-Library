@@ -1,0 +1,35 @@
+﻿<body>
+<title>Edit Personal Loans - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+  <style>
+    table {
+      border-collapse: collapse
+    }
+    tr:nth-child(even) {
+      background-image: linear-gradient(to right, darkred, lightgrey);
+    }
+  </style>
+
+<br/>
+<h2>List of @Model.Member.FirstMidName @Model.Member.LastName's loans:</h2>
+<form name="inputfield" method="Post" action="/books">
+
+<table id="list">
+@Each.Loans
+<tr>
+  <td title="BookID: @Current.Copy.BookID">
+  <a href="/books/@Current.Copy.BookID">
+    @Current.Copy.Book.BookID <b>@Current.Copy.Book.Title</b>
+  </a>
+  </td>
+</tr>
+@EndEach
+</table>
+
+</form>
+
+</body>

@@ -1,0 +1,54 @@
+﻿<body>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+    });
+  </script>
+  <title>Edit Loan #@Model.Loan.LoanID - NancyLib</title>
+  <link rel="stylesheet" href="/content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+  <form name="inputfield" method="Post" action="/updateloan">
+  <div style="background-color: grey; border-radius: 15px; border: 5px groove green">
+    <table id="newLoanForm" class="uniForm">
+      <tr>
+        <td class="label">Member:</td>
+        <td>
+          <select class="js-example-basic-single" name="newMemberID" >
+            <option value="@Model.Loan.Member.MemberID">@Model.Loan.Member.FirstMidName @Model.Loan.Member.LastName </option>
+            @Each.Members
+            <option value="@Current.MemberID">@Current.FirstMidName @Current.LastName</option>
+            @EndEach
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Book:</td>
+        <td>
+          <select class="js-example-basic-single" name="newCopyID" >
+            <option value="@Model.Loan.CopyID">@Model.Loan.Copy.Book.Title </option>
+            @Each.Copies
+            <option value="@Current.CopyID">@Current.Book.Title</option>
+            @EndEach
+          </select>
+        </td>
+      </tr>
+
+      <tr style="text-align:right; background-color: ;">
+        <td></td>
+        <td style="text-align:center; " ccolspan="20">
+          <input style="display: none;" name="IDtobeupdated" type="text" value="@Model.Loan.LoanID" />
+          <input type="submit" value="SUBMIT"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</form>
+
+</body>

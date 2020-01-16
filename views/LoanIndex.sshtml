@@ -1,0 +1,43 @@
+﻿<body>
+<title>Loan Index - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+  <style>
+    table {
+      border-collapse: collapse
+    }
+    tr:nth-child(even) {
+      background-image: linear-gradient(to right, darkred, lightgrey);
+    }
+
+  </style>
+
+<h2>List of loans:</h2>
+<table id="list">
+@Each
+<tr>
+  <td title="LoanID: @Current.LoanID">
+  <a href="/loans/@Current.LoanID">
+    @Current.LoanID - 
+    <b>@Current.Member.FirstMidName @Current.Member.LastName</b> has lent <i>@Current.Copy.Book.Title</i>
+  </a>
+  </td>
+
+  <td>
+  <a href="/loans/@Current.LoanID/edit">
+    EDIT
+  </a>
+  </td>
+  <td>
+  <a href="/loans/@Current.LoanID/confirmDelete">
+    DELETE
+  </a>
+  </td>
+
+</tr>
+@EndEach
+</table>
+</body>

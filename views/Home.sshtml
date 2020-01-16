@@ -1,0 +1,29 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Home - NancyLib</title>
+		<link rel="stylesheet" href="/Content/styles.css"/>
+		<script src="/Content/MasterScript.js"></script>
+	</head>
+
+	<body>
+		<div id="header"></div>
+
+		<h1>NancyLib</h1>
+
+		<h2>Welcome Home!</h2>
+
+		<a href="/books" title="go to book index..."><button class="indexOpt">BOOK INDEX</button></a>
+		<a href="/books/new" title="add new book to database..."><button class="indexOpt">NEW BOOK</button></a>
+
+		<br><br>
+
+		<a href="/members" title="go to member index..."><button class="indexOpt">MEMBER INDEX</button></a>
+		<a href="/members/new" title="add new member to database..."><button class="indexOpt">NEW MEMBER</button></a>
+
+		<br><br>
+		<a href="/loans" title="go to loan index..."><button class="indexOpt">LOAN INDEX</button></a>
+		<a href="/loans/new" title="add new loan to database..."><button class="indexOpt">NEW LOAN</button></a>
+	</body>
+
+</html>

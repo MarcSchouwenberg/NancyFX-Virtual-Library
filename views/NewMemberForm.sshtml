@@ -1,0 +1,37 @@
+﻿<body>
+  <title>Add New Member - NancyLib</title>
+  <link rel="stylesheet" href="/content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+  <form name="inputfield" method="Post" action="/members">
+  <div style="background-color: grey; border-radius: 15px; border: 5px groove green">
+    <table id="newMemberForm" class="uniForm">
+      <tr>
+        <td class="label">First (and middle) name:</td>
+        <td>
+          <input name="newFirstMidName" type="text" placeholder="first (and middle) name"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Last name:</td>
+        <td>
+          <input name="newLastName" type="text" placeholder="last name"/>
+        </td>
+      </tr>
+
+      <tr style="text-align:right; background-color: ;">
+        <td></td>
+        <td style="text-align:center; " ccolspan="20">
+          <input type="submit" value="SUBMIT"/>
+                    </td>
+      </tr>
+    </table>
+  </div>
+
+<br/><br/><br/>
+
+</form>
+
+</body>

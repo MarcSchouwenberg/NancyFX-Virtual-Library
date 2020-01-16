@@ -1,0 +1,25 @@
+﻿<body>
+<title>Delete @Model.FirstMidName @Model.LastName - NancyLib</title>
+  <link rel="stylesheet" href="/Content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+<h3 title="MemberID">@Model.MemberID</h3>
+<h4>First (and middle) name: @Model.FirstMidName</h4>
+<h4>Last name: @Model.LastName</h4>
+<a target="_blank" href="https://en.wikipedia.org/wiki/@Model.FirstMidName @Model.LastName">
+  <i>Wikipedia</i>
+</a>
+<br/><br/>
+
+<a href="/members/@Model.MemberID/edit">EDIT MEMBER</a>
+<br/><br/>
+
+  <form name="inputfield" method="Post" action="/deletemember">
+          <input style="display: none;" name="IDtobedeleted" type="text" value="@Model.MemberID" />
+          <input type="submit" value="CONFIRM DELETE"/>
+  </form>
+  <a href="/members/@Model.MemberID"><button>CANCEL DELETE</button></a>
+
+</body>

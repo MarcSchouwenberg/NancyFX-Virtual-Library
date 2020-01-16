@@ -1,0 +1,43 @@
+﻿<body>
+  <title>Edit @Model.Title - NancyLib</title>
+  <link rel="stylesheet" href="/content/styles.css"/>
+  <script src="/Content/MasterScript.js"></script>
+
+<div id="header"></div>
+
+  <form name="inputfield" method="Post" action="/books/@Model.BookID"
+        oninput="target.href = '/books/new/confirmnewbook/' + (newTitle.value) + '/' + (newAuthor.value)">
+  <div style="background-color: grey; border-radius: 15px; border: 5px groove green">
+    <table id="editBookForm" class="uniForm">
+      <tr>
+        <td class="label">Title:</td>
+        <td>
+          <input value="@Model.Title" name="newTitle" type="text" placeholder="title"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Author:</td>
+        <td>
+          <input value="@Model.Author" name="newAuthor" type="text" placeholder="author"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">YearPublished:</td>
+        <td>
+          <input value="@Model.YearPublished" name="newYearPublished" type="text" placeholder="year of publication"/>
+        </td>
+      </tr>
+      <tr style="text-align:right; background-color: ;">
+        <td></td>
+        <td style="text-align:center; " ccolspan="20">
+          <input style="display: none;" name="IDtobeupdated" type="text" value="@Model.BookID" />
+          <input name="_method" type="hidden" value="Put" />
+          <input type="submit" value="SUBMIT"/>
+                    </td>
+      </tr>
+    </table>
+  </div>
+
+</form>
+
+</body>
